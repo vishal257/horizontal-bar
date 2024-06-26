@@ -1,0 +1,33 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  text-align: center;
+}
+
+.scroll-container{
+  position: fixed;
+  top: 0;
+  padding: 2rem 0;
+  width: 100%;
+  background-color: rgb(114, 202, 51);
+}
+
+.progress-gutter{
+  width: 100%;
+  height: .5rem;
+  background-color: pink;
+  margin: 1rem 0 0;
+}
+
+.progress-bar{
+  width:0;
+  height: 100%;
+  background-color: green;
+}
+
+.content-container{
+  margin-top: 2rem;
+}
