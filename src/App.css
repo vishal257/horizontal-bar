@@ -1,14 +1,25 @@
 *{
   margin: 0;
   padding: 0;
+  scrollbar-width: none;
 }
+
+[data-theme="light"]{
+  background-color: white;
+}
+
+[data-theme="dark"]{
+  background-color: rgb(9 4 4);
+  color: white;
+}
+
 
 .container{
   text-align: center;
 }
 
 .scroll-container{
-  position: fixed;
+  position: sticky;
   top: 0;
   padding: 2rem 0;
   width: 100%;
@@ -30,4 +41,26 @@
 
 .content-container{
   margin-top: 2rem;
+}
+
+button{
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin: 10px 0 0;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: rgb(235, 232, 232);
+}
+
+button:active{
+  animation: squish 200ms ease-in-out;
+}
+
+@keyframes squish {
+  50%{
+    scale: 1.2 .8;
+  }
 }

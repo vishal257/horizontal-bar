@@ -1,10 +1,17 @@
 import { useEffect, useState } from "react";
+import Theme from "./hooks/Theme";
 
 interface DataSet{
   title: string
 }
 
 const HorizontalScroll = ({ url }: { url: string }) => {
+
+  const [theme, setTheme] = Theme({key:'theme', defaultTheme:'light'});
+
+  const toggleTheme = () => {
+    setTheme(() => theme === 'light' ? 'dark' : 'light')
+  }
 
   const [data, setData] = useState<DataSet[]|null>(null);
   const [errorMessage, setErrorMessage] = useState("");
@@ -50,9 +57,10 @@ const HorizontalScroll = ({ url }: { url: string }) => {
   }
 
   return (
-    <div className="container">
+    <div className="container" data-theme={theme}>
     <div className="scroll-container">
       <div><h1>Scroll Trigger</h1></div>
+      <div><button onClick={toggleTheme}>Change Theme</button></div>
       <div className="progress-gutter">
         <div className="progress-bar" style={{width: `${scrollPercentage}%`}}></div>
       </div>
